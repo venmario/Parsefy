@@ -1,10 +1,62 @@
+## Features
+
+- 🎯 **Declarative Schema Definition** - Use annotations to define your CSV structure
+- ✅ **Built-in Validators** - `@NotBlank`, `@Email`, `@Min`, `@Max`, and more
+- 🔧 **Custom Validators** - Implement business logic with `FieldValidator<T>`
+- 🔄 **Type Conversion** - Automatic conversion to Integer, BigDecimal, LocalDate, etc.
+- 🎛️ **Flexible Configuration** - Custom delimiters, encoding, validation modes
+- 📊 **Error Collection** - Get all errors with row and field details
+- 🌐 **Encoding Support** - Handle UTF-8, Windows-1252, and other encodings
+
+## Installation
+
+### Maven
+
+```xml
+<repositories>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/venmario/Parsefy</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>org.mihok.parsefy</groupId>
+        <artifactId>parsefy</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
+### Gradle
+
+```groovy
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/venmario/Parsefy")
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
+}
+
+dependencies {
+    implementation "org.mihok.parsefy:parsefy:1.0.1-SNAPSHOT"
+}
+
+```
+
 ## Quick Start
 
 ### 1. Define Your Schema
 
 ```java
-import com.parsefy.annotation.*;
-import com.parsefy.validation.*;
+import org.mihok.parsefy.annotation.*;
+import org.mihok.parsefy.validation.*;
 
 @CsvSchema
 public class User {
